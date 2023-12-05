@@ -14,7 +14,7 @@ tarefaInput.addEventListener("keypress", function (e) {
 
 //function p adicionar tarefa
 function adicionarTarefa() {
-    // Obtém o texto da tarefa do input
+    // obtém o texto do input
     const tarefaTexto = tarefaInput.value;
     
     // verifica se está vazio
@@ -55,6 +55,6 @@ function concluirTarefa(botaoConcluir) {
 // função para excluir uma tarefa
 function excluirTarefa(botaoExcluir) {
     const tarefa = botaoExcluir.parentElement;
-    // Remove a tarefa
+    // remove a tarefa
     tarefa.remove();
 }
