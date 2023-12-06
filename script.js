@@ -1,8 +1,8 @@
 
-const tarefaInput = document.getElementById("tarefa");
-const adicionarBotao = document.getElementById("adicionar");
-const listaTarefas = document.getElementById("tarefas");
-const listaTarefasFinalizadas = document.getElementById("tarefasFinalizadas");
+const tarefaInput = document.getElementById("tarefa"); // campo de input para novas tarefas
+const adicionarBotao = document.getElementById("adicionar"); // botão para adicionar novas tarefas
+const listaTarefas = document.getElementById("tarefas"); // lista para as tarefas
+const listaTarefasFinalizadas = document.getElementById("tarefasFinalizadas"); // lista para as tarefas concluídas
 
 // event listeners
 adicionarBotao.addEventListener("click", adicionarTarefa);
@@ -12,17 +12,17 @@ tarefaInput.addEventListener("keypress", function (e) {
     }
 });
 
-//function p adicionar tarefa
+// função para adicionar uma nova tarefa
 function adicionarTarefa() {
-    // obtém o texto do input
+    // pega o texto do input
     const tarefaTexto = tarefaInput.value;
-    
-    // verifica se está vazio
+
+    // verifica se não está vazio
     if (tarefaTexto.trim() !== "") {
-        // cria um novo elemento li para a nova tarefa
+        // cria um novo elemento li para a tarefa
         const novaTarefa = document.createElement("li");
 
-        // adiciona o texto da tarefa e os botões ao li
+        // adiciona o texto da tarefa e os botões
         novaTarefa.innerHTML = `
           ${tarefaTexto}
           <button class="concluir" onclick="concluirTarefa(this)">Concluir</button>
@@ -48,7 +48,7 @@ function concluirTarefa(botaoConcluir) {
     // move a tarefa para a lista de tarefas finalizadas
     listaTarefasFinalizadas.appendChild(tarefa);
 
-    // remove o botão "Concluir" para tarefas já concluídas
+    // remove o botão concluir para tarefas já concluídas
     botaoConcluir.remove();
 }
 
